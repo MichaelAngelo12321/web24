@@ -15,8 +15,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = Company::all();
-        return CompanyResource::collection($company);
+        $companies = Company::with('employeers')->get();
+        return CompanyResource::collection($companies);
     }
 
     /**
@@ -32,8 +32,41 @@ class CompanyController extends Controller
      */
     public function store(StoreCompanyRequest $request)
     {
-        $company = Company::create($request->validate());
-        return CompanyResource::make($company);
+
+//        DB::beginTransaction();
+//
+//        try {
+//            // Utwórz firmę
+//            $company = Company::create([
+//                'name' => $request->input('company_name'),
+//                'nip' => $request->input('company_nip'),
+//                'adres' => $request->input('company_adres'),
+//                'miasto' => $request->input('company_miasto'),
+//                'kod_pocztowy' => $request->input('company_kod_pocztowy'),
+//            ]);
+//
+//            // Utwórz pracownika i powiąż go z firmą
+//            $employee = new Employee([
+//                'imie' => $request->input('employee_imie'),
+//                'nazwisko' => $request->input('employee_nazwisko'),
+//                'email' => $request->input('employee_email'),
+//                'numer_telefonu' => $request->input('employee_numer_telefonu'),
+//            ]);
+//
+//            $company->employees()->save($employee);
+//
+//            // Zatwierdź transakcję
+//            DB::commit();
+//
+//            // Zwróć odpowiedź sukcesu
+//            return response()->json(['message' => 'Firma i pracownik zostali utworzeni.'], 201);
+//        } catch (\Exception $e) {
+//            // W przypadku błędu, wycofaj transakcję
+//            DB::rollback();
+//
+//            // Zwróć odpowiedź z błędem
+//            return response()->json(['message' => 'Wystąpił błąd podczas tworzenia firmy i pracownika.'], 500);
+//        }
     }
 
     /**
@@ -41,7 +74,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return CompanyResource::make($company);
+        //
     }
 
     /**
@@ -57,9 +90,9 @@ class CompanyController extends Controller
      */
     public function update(StoreCompanyRequest $request, Company $company)
     {
-        $company->update($request->all());
-
-        return new CompanyResource($company);
+//        $company->update($request->all());
+//
+//        return new CompanyResource($company);
     }
 
     /**
@@ -67,8 +100,8 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        $company->delete();
-
-        return response(null, 204);
+//        $company->delete();
+//
+//        return response(null, 204);
     }
 }

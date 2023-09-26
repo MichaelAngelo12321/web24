@@ -21,4 +21,8 @@ class Company extends Model
         'miasto',
         'kod_pocztowy'
     ];
+
+    public function employeers(){
+        return $this->hasMany('App\Models\Employee');
+    }
 }
