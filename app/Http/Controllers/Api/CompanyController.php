@@ -45,7 +45,7 @@ class CompanyController extends Controller
             }
         }
 
-        return new CompanyResource($company);
+        return response()->json("Company Added");
     }
 
 
@@ -72,7 +72,7 @@ class CompanyController extends Controller
     {
         $company->update($request->all());
 
-        return new CompanyResource($company);
+        return response()->json("Company Updated");
     }
 
     /**
@@ -82,7 +82,7 @@ class CompanyController extends Controller
     {
         $company->delete();
 
-        return new CompanyResource($company);
+        return response()->json("Company Deleted");
     }
 }
 
