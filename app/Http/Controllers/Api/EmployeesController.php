@@ -34,7 +34,7 @@ class EmployeesController extends Controller
     public function store(StoreEmployeeRequest $request)
     {
         $employee = Employee::create($request->all());
-        return response()->json(['message' => 'Employee added'], 201);
+        return new EmployeeResource($employee);
     }
 
     /**
@@ -59,7 +59,7 @@ class EmployeesController extends Controller
     public function update(StoreEmployeeRequest $request, Employee $employee)
     {
         $employee->update($request->all());
-
+//        return new EmployeeResource($employee);
         return response()->json(['message' => 'Employee updated'], 200);
     }
 

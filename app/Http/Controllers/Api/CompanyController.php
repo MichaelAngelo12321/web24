@@ -41,11 +41,11 @@ class CompanyController extends Controller
         if ($request->has('employees')) {
             $employeesData = $request->input('employees');
             foreach ($employeesData as $employeeData) {
-                $employee = $company->employeers()->create($employeeData);
+                $employee = $company->employees()->create($employeeData);
             }
         }
 
-        return response()->json(['message' => 'Company added'], 201);
+        return new CompanyResource($company);
     }
 
 
@@ -72,7 +72,7 @@ class CompanyController extends Controller
     {
         $company->update($request->all());
 
-        return response()->json(['message' => 'Company update'], 200);
+        return new CompanyResource($company);
     }
 
     /**
@@ -82,7 +82,7 @@ class CompanyController extends Controller
     {
         $company->delete();
 
-        return response()->json(['message' => 'Company deleted'], 204);
+        return new CompanyResource($company);
     }
 }
 
