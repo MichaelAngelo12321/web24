@@ -34,7 +34,8 @@ class EmployeesController extends Controller
     public function store(StoreEmployeeRequest $request)
     {
         $employee = Employee::create($request->all());
-        return response()->json(['message' => 'Employee added'], 201);
+
+        return response()->json("Employee added");
     }
 
     /**
@@ -60,7 +61,7 @@ class EmployeesController extends Controller
     {
         $employee->update($request->all());
 
-        return response()->json(['message' => 'Employee updated'], 200);
+        return response()->json("Employee updated");
     }
 
     /**
@@ -70,6 +71,6 @@ class EmployeesController extends Controller
     {
         $employee->delete();
 
-        return response()->json(['message' => 'Employee deleted'], 204);
+        return response()->json('Employee deleted');
     }
 }
