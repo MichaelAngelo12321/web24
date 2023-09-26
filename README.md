@@ -32,7 +32,7 @@ To run this project, you'll need Docker and Docker Compose installed on your sys
 To interact with the API, you can use the following endpoint to create a company with employees:
 Create a Company with Employees
 
-Endpoint: `/api/company`</br>
+Endpoint: `http://localhost:8000/api/company`</br>
 HTTP Method: `POST`
 
 Request Body:
