@@ -63,7 +63,203 @@ Request Body:
 Response:
 ```json
 {
-  "companyId": "{id of created company}"
+  "Company Added"
+}
+
+```
+
+Create a Company without Employees
+
+Endpoint: `http://localhost:8000/api/company`</br>
+HTTP Method: `POST`
+
+Request Body:
+```json
+{
+  "name": "Company Name2",
+  "nip": "1234567891",
+  "adress": "Company Adress",
+  "city": "City",
+  "post_code": "00-000"
+}
+```
+
+Response:
+```json
+{
+  "Company Added"
+}
+
+```
+
+Update Company
+
+Endpoint: `http://localhost:8000/api/company/{id}`</br>
+HTTP Method: `PUT`
+
+Request Body:
+```json
+{
+  "name": "Company Name2",
+  "nip": "1234567891",
+  "adress": "Company Adress",
+  "city": "City",
+  "post_code": "00-000"
+}
+```
+
+Response:
+```json
+{
+  "Company Updated"
+}
+
+```
+
+Delete Company
+
+Endpoint: `http://localhost:8000/api/company/{id}`</br>
+HTTP Method: `DELETE`
+
+Response:
+```json
+{
+  "Company Deleted"
+}
+
+```
+
+Get Company
+
+Endpoint: `http://localhost:8000/api/company`</br>
+HTTP Method: `GET`
+
+Response:
+```json
+{
+    "data": [
+        {
+            "name": "Company Name",
+            "nip": "1234567890",
+            "adress": "Company Adress",
+            "city": "City",
+            "post_code": "00-000",
+            "employees": [
+                {
+                    "firstName": "FirstName Employee 1",
+                    "surName": "SurName Employee 1",
+                    "email": "employee1@example.com",
+                    "phone_number": null
+                },
+                {
+                    "firstName": "FirstName Employee 2",
+                    "surName": "SurName Employee 2",
+                    "email": "employee2@example.com",
+                    "phone_number": null
+                }
+            ]
+        }
+    ]
+}
+
+```
+
+Add Employee
+
+Endpoint: `http://localhost:8000/api/employee`</br>
+HTTP Method: `POST`
+
+Request Body:
+```json
+{
+  "firstName": "Employee FirstName",
+  "surName": "Employee LastName",
+  "email": "email@gmail.com",
+  "phone_number": "123456789",
+  "company_id": "1"
+}
+
+```
+
+Response:
+```json
+{
+  "Employee Added"
+}
+
+```
+
+Update Employee
+
+Endpoint: `http://localhost:8000/api/employee/{id}`</br>
+HTTP Method: `PUT`
+
+Request Body:
+```json
+{
+  "firstName": "Employee FirstName2",
+  "surName": "Employee LastName2",
+  "email": "email@gmail.com",
+  "phone_number": "123456789",
+  "company_id": "1"
+}
+
+```
+
+Response:
+```json
+{
+  "Employee Updated"
+}
+
+```
+Update Employee
+
+Endpoint: `http://localhost:8000/api/employee/{id}`</br>
+HTTP Method: `DELETE`
+
+Request Body:
+```json
+{
+  "firstName": "Employee FirstName2",
+  "surName": "Employee LastName2",
+  "email": "email@gmail.com",
+  "phone_number": "123456789",
+  "company_id": "1"
+}
+
+```
+
+Response:
+```json
+{
+  "Employee Deleted"
+}
+
+```
+
+Get Employee
+
+Endpoint: `http://localhost:8000/api/employee`</br>
+HTTP Method: `GET`
+
+Response:
+```json
+{
+    "data": [
+        {
+            "firstName": "FirstName Employee 1",
+            "surName": "SurName Employee 1",
+            "email": "employee1@example.com",
+            "phone_number": null
+        },
+        {
+            "firstName": "FirstName Employee 2",
+            "surName": "SurName Employee 2",
+            "email": "employee2@example.com",
+            "phone_number": null
+        }
+    ]
 }
 
 ```
