@@ -18,10 +18,10 @@ return new class extends Migration
                 ->references('id')
                 ->on('companies')
                 ->onDelete('cascade');
-            $table->string('imie');
-            $table->string('nazwisko');
-            $table->string('email');
-            $table->string('numer_telefonu')->nullable();
+            $table->string('firstName');
+            $table->string('surName');
+            $table->string('email')->unique();
+            $table->string('phone_number')->nullable();
             $table->timestamps();
         });
     }

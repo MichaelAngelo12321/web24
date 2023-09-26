@@ -11,7 +11,7 @@ class StoreEmployeeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,11 +22,12 @@ class StoreEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'firstName'  => ['required', 'string', 'max:255'],
+            'surName'  => ['required', 'string', 'max:255'],
+            'email'  => ['required', 'email'],
             'company_id' => ['required'],
-            'imie'  => ['required'],
-            'nazwisko'  => ['required'],
-            'email'  => ['required'],
-            'numer_telefonu'  => ['required']
+            'phone_number'  => ['nullable']
         ];
     }
+
 }

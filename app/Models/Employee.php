@@ -15,12 +15,13 @@ class Employee extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'firstName',
         'company_id',
-        'imie',
-        'nazwisko',
+        'surName',
         'email',
-        'numer_telefonu'
+        'phone_number'
     ];
+
 
     public function company(){
        return $this->belongsTo('App\Models\Company','company_id');

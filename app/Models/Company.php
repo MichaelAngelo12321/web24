@@ -17,12 +17,12 @@ class Company extends Model
     protected $fillable = [
         'name',
         'nip',
-        'adres',
-        'miasto',
-        'kod_pocztowy'
+        'adress',
+        'city',
+        'post_code'
     ];
 
-    public function employeers(){
+    public function employees(){
         return $this->hasMany('App\Models\Employee');
     }
 }
