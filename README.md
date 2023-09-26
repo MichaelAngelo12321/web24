@@ -48,13 +48,13 @@ Request Body:
       "firstName": "FirstName Employee 1",
       "surName": "SurName Employee 1",
       "email": "employee1@example.com",
-      "phone_Number": "123456789"
+      "phone_number": "123456789"
     },
     {
       "firstName": "FirstName Employee 2",
       "surName": "SurName Employee 2",
       "email": "employee2@example.com",
-      "phone_Number": "987654321"
+      "phone_number": "987654321"
     }
   ]
 }
