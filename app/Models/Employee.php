@@ -22,6 +22,7 @@ class Employee extends Model
         'numer_telefonu'
     ];
 
+
     public function company(){
        return $this->belongsTo('App\Models\Company','company_id');
     }

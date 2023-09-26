@@ -20,7 +20,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->string('imie');
             $table->string('nazwisko');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('numer_telefonu')->nullable();
             $table->timestamps();
         });
