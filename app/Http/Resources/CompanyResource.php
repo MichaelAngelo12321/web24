@@ -12,15 +12,22 @@ class CompanyResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-    public function toArray(Request $request): array
+    public function toArray($request): array
     {
         return [
             'name' => $this->name,
-            'NIP' => $this->nip,
+            'nip' => $this->nip,
             'adres' => $this->adres,
             'miasto' => $this->miasto,
             'kod_pocztowy' => $this->kod_pocztowy,
-            'created_at' => $this->created_at,
+            'employeers' => $this->employeers->map(function ($employee) {
+                return [
+                    'imie' => $employee->imie,
+                    'nazwisko' => $employee->nazwisko,
+                    'email' => $employee->email,
+                    'numer_telefonu' => $employee->numer_telefonu,
+                ];
+            }),
         ];
     }
 }

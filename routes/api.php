@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\EmployeersController;
 use App\Http\Controllers\Api\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,13 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
 });
 
-Route::apiResource('company',CompanyController::class)->except([
-    'create', 'show', 'edit'
-]);
+Route::apiResource('company',CompanyController::class);
+Route::apiResource('employee',EmployeersController::class);
 
-Route::apiResource('posts',PostController::class)->except([
-    'create', 'show', 'edit'
-]);
+
