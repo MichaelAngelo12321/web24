@@ -17,15 +17,15 @@ class CompanyResource extends JsonResource
         return [
             'name' => $this->name,
             'nip' => $this->nip,
-            'adres' => $this->adres,
-            'miasto' => $this->miasto,
-            'kod_pocztowy' => $this->kod_pocztowy,
-            'employeers' => $this->employeers->map(function ($employee) {
+            'adress' => $this->adres,
+            'city' => $this->miasto,
+            'post_code' => $this->kod_pocztowy,
+            'employees' => $this->employeers->map(function ($employee) {
                 return [
-                    'imie' => $employee->imie,
-                    'nazwisko' => $employee->nazwisko,
+                    'firstName' => $employee->imie,
+                    'surName' => $employee->nazwisko,
                     'email' => $employee->email,
-                    'numer_telefonu' => $employee->numer_telefonu,
+                    'phone_number' => $employee->numer_telefonu,
                 ];
             }),
         ];

@@ -9,15 +9,15 @@ use App\Models\Company;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class EmployeersController extends Controller
+class EmployeesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $employeers = Employee::all();
-        return EmployeeResource::collection($employeers);
+        $employees = Employee::all();
+        return EmployeeResource::collection($employees);
     }
 
     /**

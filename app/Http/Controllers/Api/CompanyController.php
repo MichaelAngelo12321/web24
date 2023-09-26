@@ -15,7 +15,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::with('employeers')->get();
+        $companies = Company::with('employees')->get();
         return CompanyResource::collection($companies);
     }
 

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CompanyController;
-use App\Http\Controllers\Api\EmployeersController;
+use App\Http\Controllers\Api\EmployeesController;
 use App\Http\Controllers\Api\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('company',CompanyController::class);
-Route::apiResource('employee',EmployeersController::class);
+Route::apiResource('employee',EmployeesController::class);
 
 

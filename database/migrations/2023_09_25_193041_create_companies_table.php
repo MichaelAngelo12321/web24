@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('nip')->unique();
-            $table->string('adres');
-            $table->string('miasto');
-            $table->string('kod_pocztowy');
+            $table->string('adress');
+            $table->string('city');
+            $table->string('post_code');
             $table->timestamps();
         });
     }

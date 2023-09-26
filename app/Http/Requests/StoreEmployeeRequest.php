@@ -22,27 +22,12 @@ class StoreEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'imie'  => ['required', 'string', 'max:255'],
-            'nazwisko'  => ['required', 'string', 'max:255'],
+            'firstName'  => ['required', 'string', 'max:255'],
+            'surName'  => ['required', 'string', 'max:255'],
             'email'  => ['required', 'email'],
             'company_id' => ['required'],
-            'numer_telefonu'  => ['nullable']
+            'phone_number'  => ['nullable']
         ];
     }
 
-    /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
-     */
-    public function messages(): array
-    {
-        return [
-            'imie.required' => 'Pole imie jest wymagane.',
-            'nazwisko.required' => 'Pole nazwisko jest wymagane.',
-            'email.required' => 'Pole email jest wymagane.',
-            'company_id.required' => 'Pole company jest wymagane.',
-
-        ];
-    }
 }
